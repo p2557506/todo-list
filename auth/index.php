@@ -7,32 +7,21 @@
         <h1>Login Page</h1>
         <div class = "container">
             <div class = "row">
-                <div class = "col-lg-1">
-                    Your Email
-                </div>
+                <div class = "col-lg-4">
+                    <div class = "row">
+                        <!-- username -->
+                        <div class = "col-lg-12">
+                            
+                        </div>
+                        <!-- password -->
+                        <div class = "col-lg-12">
 
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-  
-
+                        </div>
+                    </div>
                 </div>
-                
-                <div class = "col-lg-3">
-                    Your Password
-                </div>
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Username">
-  
+                <div class = "col-lg-8">
+                    <!-- image -->
 
-                </div>
-
-                
-                <div class = "col-lg-1">
-                <button type="button" class="btn btn-outline-primary">Register</button>
-                </div>
-
-                <div class = "col-lg-1">
-                <button type="button" class="btn btn-outline-primary">Login</button>
                 </div>
             </div>
 
