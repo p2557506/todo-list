@@ -1,3 +1,4 @@
+<?include $_SERVER['ROOT_PATH']."includes/dbc.php"?>
 <html>
     <head>
         <title>todo</title>
@@ -10,7 +11,7 @@
     
         <div class="row" style="background-image: url('https://poloandtweed.com/wp-content/uploads/2019/07/Tips-to-Managing-Tasks.jpg'); padding:10vh;">
             <div class="offset-md-4 col-sm-4 text-center pb-2" style="background-color: rgba(255,255,255,.5);">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple112/v4/20/e1/24/20e124a4-89d4-4bb0-5dc4-27036b805755/AppIcon-Release-0-0-85-220-0-0-0-0-4-0-0-0-2x-sRGB-0-0-0-0-0.png/1200x630bb.png" height="100" alt="logo">
+                <img src="<?echo $baseURL?>includes/media/logo/logo.png" height="100" alt="logo">
                 <h1>Todo list</h1>
                 <a href="auth/" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login or Register</a>
             </div>
