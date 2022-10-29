@@ -1,5 +1,7 @@
 <?include $_SERVER['ROOT_PATH']."includes/dbc.php"?>
-
+<?
+$_SESSION['uid'] = 0;
+?>
 
 <html>
     <head>
@@ -45,7 +47,7 @@
                                 </button>
                             </div>
                             <div class = "col-lg-12">                                
-                                <button class="btn btn-primary btn-block mt-2 mb-2" style="width: 100%;">
+                                <button id = "btn-register" class="btn btn-primary btn-block mt-2 mb-2" style="width: 100%;">
                                     Register
                                 </button>
                             </div>
@@ -62,7 +64,57 @@
             
             $( '#btn-login').click( function() {
                 $( "#alert-auth").show();
+                
+                $.ajax({
+                    url:"xhr.php",    //the page containing php script
+                    type: "post",    //request type,
+                    dataType: 'json',
+                    data: {
+                        action:'verify_user',
+                        userName: $("#username").val(),
+                        password: $("#password").val()
+                    },
+                    success:function(data){
+                        if(data.result){
+                            $("#alert-auth").hide();
+
+                            
+                            window.location.replace("<? echo $baseURL . 'list/'?>")
+                        }
+                    }
+                });
             });
+
+        $( '#btn-register').click( function() {
+                $( "#alert-auth").show();
+                
+                $.ajax({
+                    url:"xhr.php",    //the page containing php script
+                    type: "post",    //request type,
+                    dataType: 'json',
+                    data: {
+                        action:'create_user',
+                        userName: $("#username").val(),
+                        password: $("#password").val()
+                    },
+                    success:function(data){
+                        if(data.result){
+                            $("#alert-auth").hide();
+                            window.location.replace("<? echo $baseURL . 'list/'?>");
+                        }
+                    }
+                });
+        });
+
+        $("#username,#password").keypress(function(e){
+            
+            if (e.keyCode === 13) {
+                $('#btn-login').click();
+    //Do your stuff...
+  }
+            
+            //this code executes when the keypress event occurs.
+        });
         </script>
     </body>
 </html>
